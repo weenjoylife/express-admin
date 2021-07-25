@@ -1,0 +1,5 @@
+在npm install好依赖后，
+在项目根目录下运行node ./bin/www启动
+
+用户admin/admin
+test/admin

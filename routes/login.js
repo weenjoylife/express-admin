@@ -30,12 +30,14 @@ router.post("/", async(req, res, next) => {
     var verify = req.body.verify;
     var is_remember = req.body.is_remember;
     if(verify_code == verify) {
-        var sql = "select * from bs_user where user_name=? and is_del=0";
+        var sql = "select * from bs_user where user_name=? ";
         var users = await mysql.query(sql, [username]);
         if (users.length > 0) {
             var user = users[0];
             var salt = user.salt;
+            //账号 'admin' : 'admin'; 'test' : 'admin'
             var password2 = stringUtils.createPassword(password.trim()+salt);
+            console.log(password2);
             if(user.password != password2) {
                 res.status(200).json({error: 1, msg: "用户名或者密码错误"});
                 return;

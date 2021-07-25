@@ -24,6 +24,8 @@ var operation_log = require('./routes/operation_log');
 var log = require('./core/logger').getLogger("system");
 var moment = require('moment');
 
+var trontokens = require('./routes/trontokens');
+
 var app = express();
 
 app.locals.moment = moment;
@@ -83,6 +85,10 @@ app.use('/user_role', user_role);
 app.use('/menu_role', menu_role);
 app.use('/login_log', login_log);
 app.use('/operation_log', operation_log);
+
+//v1.0.1
+
+app.use('/trontokens', trontokens);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {

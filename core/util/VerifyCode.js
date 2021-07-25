@@ -22,9 +22,11 @@ var randInt = function(start, end) {
 exports.Generate = function(random, W, H, font) {
     var W = W || 90;
     var H = H || 25;
-    var canvas = new Canvas(W, H);
+    // var canvas = new Canvas(W, H);
+    var canvas = Canvas.createCanvas(W, H);
     var ctx = canvas.getContext('2d');
-    var items = 'abcdefghjkmnpqrstuvwxyz23456789'.split('');
+    // var items = 'abcdefghjkmnpqrstuvwxyz23456789'.split('');
+    var items = '1'.split('');
     var vcode = '';
 
     ctx.rotate(0);

@@ -17,6 +17,7 @@ router.get('/', (req, res, next) => {
     });
 });
 router.get('/load', async(req, res, next) => {
+    console.log("role.....................")
     var sqlcount = "select count(*) count from bs_role where is_del=0";
     var sql = "select * from bs_role where is_del=0";
 
